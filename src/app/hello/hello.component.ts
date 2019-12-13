@@ -6,23 +6,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hello.component.scss']
 })
 export class HelloComponent implements OnInit {
-  private price= 50 ; 
-  USD= true; 
+  private price= 50 ;
+  USD= true;
 
 
   constructor() { }
-  
+
   ngOnInit() {
   }
   get amount() {
     return this.USD? this.price : this.price*65
   }
   get format(){
-    return this.USD ? 'USD' : "INR"; 
-  }  
+    return this.USD ? 'USD' : "EUR";
+  }
 
   toggleItem(){
-    this.USD = !this.USD; 
+    this.USD = !this.USD;
   }
 
 }
