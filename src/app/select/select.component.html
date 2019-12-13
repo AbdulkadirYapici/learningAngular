@@ -1,0 +1,39 @@
+<p>
+  You can also set array of objects as items input
+</p>
+
+<ng-select [items]="people"
+           bindLabel="name"
+           bindValue="id"
+           [(ngModel)]="selectedPersonId">
+</ng-select>
+
+<hr>
+<p>
+  While array of objects is the most common items source, you may want to set simple array of strings, numbers,
+  booleans
+</p>
+
+<ng-select [items]="simpleItems"
+           [(ngModel)]="selectedSimpleItem">
+</ng-select>
+
+
+
+
+
+<p>
+  If you have simple use case, you can omit items array and bind options directly in html using <b>ng-option</b>
+  component.
+</p>
+
+<div>
+  <button type="button" class="btn btn-secondary btn-sm" (click)="toggleDisabled()">Toggle disabled</button>
+</div>
+<br>
+<ng-select [multiple]="true" [(ngModel)]="selectedCars">
+  <ng-option *ngFor="let car of cars" [value]="car.id" [disabled]="car.disabled">{{car.name}}</ng-option>
+  <ng-option [value]="'custom'">Custom</ng-option> <!-- handmade option -->
+</ng-select>
+
+<br/>Selected car ID: {{selectedCars | json}}

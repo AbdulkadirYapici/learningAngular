@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule} from '@angular/common/http'
-import {ReactiveFormsModule} from '@angular/forms'
-import {FormsModule} from '@angular/forms'
+import { HttpClientModule} from '@angular/common/http';
+import { NgSelectModule } from '@ng-select/ng-select';
+import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule} from '@angular/forms';
 import { Injectable, ErrorHandler, Injector } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,6 +20,7 @@ import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { ApigridComponent } from './apigrid/apigrid.component';
 import { FormComponent } from './form/form.component';
+import { SelectComponent } from './select/select.component';
 
 
 @NgModule({
@@ -32,13 +34,15 @@ import { FormComponent } from './form/form.component';
     LoginComponent,
     AdminComponent,
     ApigridComponent,
-    FormComponent
+    FormComponent,
+    SelectComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NgSelectModule,
     FormsModule
   ],
   providers: [RecordsService, ApirequestService],

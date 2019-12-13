@@ -11,6 +11,8 @@ import { AdminComponent } from './admin/admin.component';
 import { HelloComponent } from './hello/hello.component';
 import { ApigridComponent } from './apigrid/apigrid.component';
 import {FormComponent} from './form/form.component';
+import {NgSelectComponent} from '@ng-select/ng-select';
+import {SelectComponent} from './select/select.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -21,8 +23,8 @@ const routes: Routes = [
   { path: 'hello', component: HelloComponent},
   { path: 'test', component: ApigridComponent},
   { path: 'test/:id', component: ApigridComponent},
-  { path: 'form', component: FormComponent}
-
+  { path: 'form', component: FormComponent},
+  { path: 'select', component: SelectComponent}
 
 ];
 
