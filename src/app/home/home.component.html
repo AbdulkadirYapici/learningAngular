@@ -1,0 +1,55 @@
+<p>home works!
+<a routerLink="/login">Login</a> <br>
+<a routerLink="/admin">Go to Admin Page</a>
+</p>
+
+
+<h1 [ngClass]="{
+  'gray': h1Style,
+  'large': !h1Style
+}">Home</h1>
+<button (click)="firstClick()" type="button" name="button">Click Me</button>
+
+<h1 [style.color]="h1Style ? 'blue': 'red'">Home</h1>
+
+<h1 [ngStyle]="{
+  'color': h1Style ? 'gray' : 'yellow',
+  'font-size': !h1Style ? '3em' : '1em'
+}">Home</h1>
+<ul *ngIf="users">
+  <li *ngFor="let user of users.data">
+      <img [src]="user.avatar"><p>{{user.first_name}} {{user.last_name}}</p>
+  </li>
+</ul>
+
+<body style="text-align:center;">
+
+
+
+    <button (click)="myGeeks()">Click Here!</button>
+
+    <p id="GFG" style="font-size:20px;"></p>
+
+<input type="text" [value]="text" (input)="updateValue($event)">
+{{text}}
+<br>
+ya da
+<br>
+
+<input type="text" [(ngModel)]= "text">
+{{text}}
+<br>
+<br>
+<br>
+<table>
+  <tr>
+    <td>Id-</td>
+    <td>Name-</td>
+    <td>Online?</td>
+  </tr>
+  <tr *ngFor = "let record of records; let myIndex=index ; let evenRecord = even; let oddRecord =  odd ; let first = first; let last = last" [ngClass]= "{odd: oddRecord, even: evenRecord, first: first, last: last}">
+      <td>{{myIndex + 1 }}</td>
+      <td>{{record.name }}  -></td>
+      <td> {{record.online}}</td>
+  </tr>
+</table>

@@ -1,0 +1,101 @@
+<p>Grid</p>
+<div *ngFor="let element of regions">
+  {{element.id}}- {{element.name}}
+</div>
+<br><br><hr>
+<table>
+  <tr>
+    <td>Id-</td>
+    <td>Name-</td>
+  </tr>
+  <tr *ngFor = "let element of regions; let myIndex=index ; let evenRecord = even; let oddRecord =  odd ; let first = first; let last = last" [ngClass]= "{odd: oddRecord, even: evenRecord, first: first, last: last}">
+    <td>{{element.id }}  -></td>
+    <td> {{element.name}}</td>
+    <td><button (click)="deleteItem(element.id)">Delete This Item</button> </td>
+    <td><button (click)="editItem(element.id)">Edit This Item</button> </td>
+
+  </tr>
+
+
+</table>
+<br><br><hr>
+
+Sinpm install --save-dev @types/jqueryngle Item Result : {{singleItem["name"]}}
+
+"name": "Idea Kadir",
+"slug": "idea-Kadir",
+"sortOrder": 999,
+"status": 1,
+"distributorCode": "string (string)",
+"distributor": "Super Tedarik",
+"imageFile": "Kadir.jpg",
+"showcaseContent": "Üst içerik metniii.",
+"displayShowcaseContent": 1,
+"metaKeywords": "kırmızı, kalem, kırtasiye",
+"metaDescription": "Kaliteli kırtasiye ürünleri.",
+"pageTitle": "Kırmızı Kalem"
+
+  <form #post = "ngForm" (ngSubmit) = "onClickPostSubmit(post.value)" >
+    <input type = "text" name = "name" placeholder = "name" ngModel>
+    <br/>
+    <input type = "text" name = "slug" placeholder = "slug" ngModel>
+    <br/>
+    <input type = "number" name = "sortOrder" placeholder = "sortOrder" ngModel>
+    <br/>
+    <input type = "checkbox" name = "status" placeholder = "status" ngModel> Status
+    <br/>
+    <input type = "text" name = "distributorCode" placeholder = "distributorCode" ngModel>
+    <br/>
+    <input type = "text" name = "distributor" placeholder = "distributor" ngModel>
+    <br/>
+    <input type = "text" name = "imageFile" placeholder = "imageFile" ngModel>
+    <br/>
+    <input type = "text" name = "showcaseContent" placeholder = "showcaseContent" ngModel>
+    <br/>
+    <input type = "checkbox" name = "displayShowcaseContent" placeholder = "displayShowcaseContent" ngModel> Display Showcase Content
+    <br/>
+    <input type = "text" name = "metaKeywords" placeholder = "metaKeywords" ngModel>
+    <br/>
+    <input type = "text" name = "metaDescription" placeholder = "metaDescription" ngModel>
+    <br/>
+    <input type = "text" name = "pageTitle" placeholder = "pageTitle" ngModel>
+    <br/>
+
+    <input type = "submit" value = "submit">
+
+
+  </form><br>
+<hr><hr>
+
+<h3>Edit Current Item </h3>
+<form #put = "ngForm" (ngSubmit) = "onClickPutSubmit(put.value, singleItem['id'])" >
+  <input type = "text" name = "name" placeholder = "name" ngModel value="{{singleItem['name']}}">
+  <br/>
+  <input type = "text" name = "slug" placeholder = "slug" [(ngModel)]="singleItem['slug']">
+  <br/>
+  <input type = "number" name = "sortOrder" placeholder = "sortOrder" [(ngModel)]="singleItem['sortOrder']" value="{{singleItem['sortOrder']}}">
+  <br/>
+  <div><input type="checkbox" id="myCheck" class="check" name = "status" placeholder = "status" [(ngModel)]="singleItem['status']" value="{{singleItem['status']}}"> Status</div>
+  <br/>
+  <input type = "text" name = "distributorCode" placeholder = "distributorCode" [(ngModel)]="singleItem['distributorCode']" value="{{singleItem['distributorCode']}}">
+  <br/>
+  <input type = "text" name = "distributor" placeholder = "distributor" [(ngModel)]="singleItem['distributor']" value="{{singleItem['distributor']}}" >
+  <br/>
+  <input type = "text" name = "imageFile" placeholder = "imageFile" [(ngModel)]="singleItem['imageFile']" value="{{singleItem['imageFile']}}">
+  <br/>
+  <input type = "text" name = "showcaseContent" placeholder = "showcaseContent" [(ngModel)]="singleItem['showcaseContent']" value="{{singleItem['showcaseContent']}}">
+  <br/>
+  <input type = "checkbox" class="check"  name = "displayShowcaseContent" placeholder = "displayShowcaseContent" [(ngModel)]="singleItem['displayShowcaseContent']" value="{{singleItem['status']}}"> Display Showcase Content
+  <br/>
+  <input type = "text" name = "metaKeywords" placeholder = "metaKeywords" [(ngModel)]="singleItem['metaKeywords']" value="{{singleItem['metaKeywords']}}">
+  <br/>
+  <input type = "text" name = "metaDescription" placeholder = "metaDescription" [(ngModel)]="singleItem['metaDescription']" value="{{singleItem['metaDescription']}}">
+  <br/>
+  <input type = "text" name = "pageTitle" placeholder = "pageTitle" [(ngModel)]="singleItem['pageTitle']" value="{{singleItem['pageTitle']}}">
+  <br/>
+
+  <input type = "submit" value = "submit">
+
+
+
+</form>
