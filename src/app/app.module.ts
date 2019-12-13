@@ -18,6 +18,7 @@ import { ApirequestService } from './apirequest.service';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { ApigridComponent } from './apigrid/apigrid.component';
+import { FormComponent } from './form/form.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { ApigridComponent } from './apigrid/apigrid.component';
     LoginComponent,
     AdminComponent,
     ApigridComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
