@@ -29,7 +29,7 @@ export class ApigridComponent implements OnInit {
 
     //this.apiService.sendDelete();
     //this.apiService.sendPut();
-    this.route.params.subscribe( params => this.editId= params.id);
+    /*this.route.params.subscribe( params => this.editId= params.id);
     console.log("id: " + this.editId);
 
     if(this.editId != null) {
@@ -43,7 +43,7 @@ export class ApigridComponent implements OnInit {
         );
     }
     else{
-    }
+    }*/
 
   }
 
@@ -103,7 +103,7 @@ export class ApigridComponent implements OnInit {
       "slug": formData.slug,
       "sortOrder": formData.sortOrder,
       "status": formData.status,
-      "distributorCode": "string ("+  formData.distributorCode+ ")",
+      "distributorCode": formData.distributorCode,
       "distributor": formData.distributor,
       "imageFile": formData.imageFile + ".jpg",
       "showcaseContent": formData.showcaseContent,
@@ -137,7 +137,7 @@ export class ApigridComponent implements OnInit {
       "slug": formData.slug,
       "sortOrder": formData.sortOrder,
       "status": formData.status,
-      "distributorCode": "string ("+  formData.distributorCode+ ")",
+      "distributorCode":  formData.distributorCode,
       "distributor": formData.distributor,
       "imageFile": formData.imageFile + ".jpg",
       "showcaseContent": formData.showcaseContent,
@@ -162,7 +162,7 @@ export class ApigridComponent implements OnInit {
 
   editItem(elementId){
     //this.router.navigate(['test', elementId]);
-    window.location.href = '/test/'+ elementId;
+    window.location.href = '/form/'+ elementId;
   }
 
 }

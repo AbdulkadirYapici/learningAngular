@@ -21,6 +21,7 @@ import { AdminComponent } from './admin/admin.component';
 import { ApigridComponent } from './apigrid/apigrid.component';
 import { FormComponent } from './form/form.component';
 import { SelectComponent } from './select/select.component';
+import { AgGridModule } from 'ag-grid-angular';
 
 
 @NgModule({
@@ -43,7 +44,9 @@ import { SelectComponent } from './select/select.component';
     HttpClientModule,
     ReactiveFormsModule,
     NgSelectModule,
-    FormsModule
+    FormsModule,
+    AgGridModule.withComponents([])
+
   ],
   providers: [RecordsService, ApirequestService],
   bootstrap: [AppComponent]

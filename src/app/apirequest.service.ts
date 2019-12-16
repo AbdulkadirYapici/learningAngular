@@ -17,9 +17,9 @@ import { HttpErrorResponse } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ApirequestService {
-  accessToken = 'Bearer ZWFlOTgwNjE2YmUzNWU3ZDg2MzNkNjI5MGE0ZWM5NWQ5NGExZjBmZDg3ZWIyN2MzMTFjOTBhOTY2NDdlZmRiMg';
-  api = 'https://abdulkadiryapici.myideasoft.com/api/brands/';
-  postApi = 'https://abdulkadiryapici.myideasoft.com/api/brands';
+  accessToken = 'Bearer YjQ5OTkwZjg3MThlYjEzNTg1YzYzZjg1MTFmN2JlNWE2NDk5NTU0NWU5ODJjYjI5YmMxOGM0MTY4YmQyNjM5OA';
+  api = 'https://kadir6490.pre-ideasoft.com/api/brands/';
+  postApi = 'https://kadir6490.pre-ideasoft.com/api/brands';
   postData = {
     "name": "Idea Api qqq",
     "slug": "idea-qqq",

@@ -1,55 +1,71 @@
 <!-- main app container -->
 <div class="jumbotron">
       <div class="col-md-6 offset-md-3">
-        <h3>Angular 7 Reactive Form Validation</h3>
-        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <h3 style="margin: 0 auto; text-align: center">Edit Item</h3>
+        <form #put = "ngForm" (ngSubmit) = "onClickPutSubmit(put.value, singleItem['id'])" >
           <div class="form-group">
-            <label>First Name</label>
-            <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
-            <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-              <div *ngIf="f.firstName.errors.required">First Name is required</div>
+            <label>Name</label>
+            <input type = "text" class="form-control" name = "name" placeholder = "name" [(ngModel)]="singleItem['name']">
+            <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+              <div *ngIf="f.name.errors.required">Name is required</div>
             </div>
           </div>
           <div class="form-group">
-            <label>Last Name</label>
-            <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+            <label>Slug</label>
+            <input type = "text" class="form-control"  name = "slug" placeholder = "slug" [(ngModel)]="singleItem['slug']">
             <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-              <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+              <div *ngIf="f.Slug.errors.required">Slug is required</div>
             </div>
           </div>
           <div class="form-group">
-            <label>Email</label>
-            <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
-            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-              <div *ngIf="f.email.errors.required">Email is required</div>
-              <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+            <label>Sort Order</label>
+            <input type = "number" class="form-control" name = "sortOrder" placeholder = "sortOrder" [(ngModel)]="singleItem['sortOrder']" value="{{singleItem['sortOrder']}}">
+            <div *ngIf="submitted && f.sortOrder.errors" class="invalid-feedback">
+              <div *ngIf="f.sortOrder.errors.required">sortOrder is required</div>
             </div>
           </div>
           <div class="form-group" >
-            <label>Password</label>
-            <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors,
-            'has-danger': f.password.invalid && f.password.dirty,
-            'has-success': f.password.valid && f.password.dirty
-            }" />
-            <pre>Dirty? {{ f.password.dirty }} </pre>
-            <pre>Touched? {{ f.password.touched }} </pre>
-
-            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-              <div *ngIf="f.password.errors.required">Password is required</div>
-              <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+            <label>Status</label>
+            <div><input type="checkbox"  class="form-control" id="myCheck" class="check" name = "status" placeholder = "status" [(ngModel)]="singleItem['status']" value="{{singleItem['status']}}"> Status</div>
+            <div *ngIf="submitted && f.status.errors" class="invalid-feedback">
+              <div *ngIf="f.status.errors.required">Password is required</div>
             </div>
           </div>
-          <div class="form-group">
-            <label>Confirm Password</label>
-            <input type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
-            <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
-              <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
-              <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
-            </div>
+          <div class="form-group" >
+            <label>Distributor Code</label>
+            <input type = "text" class="form-control" name = "distributorCode" placeholder = "distributorCode" [(ngModel)]="singleItem['distributorCode']" value="{{singleItem['distributorCode']}}">
+          </div>
+          <div class="form-group" >
+            <label>Distributor</label>
+            <input type = "text" class="form-control" name = "distributor" placeholder = "distributor" [(ngModel)]="singleItem['distributor']" value="{{singleItem['distributor']}}" >
+          </div>
+          <div class="form-group" >
+            <label>Image File</label>
+            <input type = "text" class="form-control" name = "imageFile" placeholder = "imageFile" [(ngModel)]="singleItem['imageFile']" value="{{singleItem['imageFile']}}">
+          </div>
+          <div class="form-group" >
+            <label>Showcase Content</label>
+            <input type = "text" class="form-control" name = "showcaseContent" placeholder = "showcaseContent" [(ngModel)]="singleItem['showcaseContent']" value="{{singleItem['showcaseContent']}}">
+          </div>
+          <div class="form-group" >
+          <label>Display Showcase Content</label>
+            <div><input type="checkbox"  class="form-control"  class="check" name = "displayShowcaseContent" placeholder = "displayShowcaseContent" [(ngModel)]="singleItem['displayShowcaseContent']" value="{{singleItem['displayShowcaseContent']}}"> Display Showcase Content</div>
+        </div>
+          <div class="form-group" >
+          <label>Meta Keywords</label>
+          <input type = "text" class="form-control" name = "metaKeywords" placeholder = "metaKeywords" [(ngModel)]="singleItem['metaKeywords']" value="{{singleItem['metaKeywords']}}">
+      </div>
+          <div class="form-group" >
+            <label>Page Title</label>
+            <input type = "text" class="form-control" name = "pageTitle" placeholder = "pageTitle" [(ngModel)]="singleItem['pageTitle']" value="{{singleItem['pageTitle']}}">
           </div>
           <div class="form-group">
-            <button class="btn btn-primary">Register</button>
+            <input class="form-control" type = "submit" value = "Submit" style="background: greenyellow">
           </div>
         </form>
       </div>
+
 </div>
+<button (click)="goToTestPage()">Go Back To Test Page</button>
+
+

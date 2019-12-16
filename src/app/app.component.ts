@@ -6,13 +6,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  title = 'app';
 
-  somevar= 10 ; 
-  title = 'ng7';
+  columnDefs = [
+    {headerName: 'Make', field: 'make', sortable: true},
+    {headerName: 'Model', field: 'model', sortable: true},
+    {headerName: 'Price', field: 'price', sortable: true}
+  ];
+
+  rowData = [
+    { make: 'Toyota', model: 'Celica', price: 35000 },
+    { make: 'Ford', model: 'Mondeo', price: 32000 },
+    { make: 'Porsche', model: 'Boxter', price: 72000 }
+  ];
+
+  somevar= 10 ;
+
   ngOnInit(){
-    setInterval(()=> {
+    /*setInterval(()=> {
       this.somevar= Math.random();
-    },50    )
+    },50    )*/
+
   }
 
 }

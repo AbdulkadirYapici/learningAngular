@@ -24,6 +24,7 @@ const routes: Routes = [
   { path: 'test', component: ApigridComponent},
   { path: 'test/:id', component: ApigridComponent},
   { path: 'form', component: FormComponent},
+  { path: 'form/:id', component: FormComponent},
   { path: 'select', component: SelectComponent}
 
 ];
